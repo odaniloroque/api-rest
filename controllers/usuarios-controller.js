@@ -4,7 +4,7 @@ const mysql = require('../mysql').pool;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-router.post('/cadastro', (req, res, next) => {
+exports.cadastro =  (req, res, next) => {
     mysql.getConnection((err, conn) => {
         if(err){return res.status(500).send({error: err})}
         conn.query("SELECT * FROM usuarios WHERE email = ?",[req.body.email],(error, resultado)=> {
@@ -33,9 +33,9 @@ router.post('/cadastro', (req, res, next) => {
             }
        })  ;
     });
-});
+}
 
-router.post('/login', (req, res, next) => {
+exports.login = (req, res, next) => {
     mysql.getConnection((err, conn) => {
         if(err) { return res.status(500).send({error: err})}
         const mensageErrAuth = 'Falha na autenticação'; 
@@ -63,6 +63,4 @@ router.post('/login', (req, res, next) => {
                         });
             });
     });
-});
-
-module.exports = router;
+}
