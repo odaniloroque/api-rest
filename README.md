@@ -1,5 +1,6 @@
-# api-rest
+# API Exemplo ( NODEJS +  Express )
 
+Pacotes utilizados no projeto 
 npm init
 npm install express
 npm --save-dev install morgan
@@ -12,4 +13,4 @@ npm install jsonwebtoken
 npm install -g heroku
 npm install axios
 
-Pacotes utilizados no projeto
+
