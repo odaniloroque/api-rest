@@ -27,12 +27,12 @@ const upload = multer({
         fileFilter: fileFilter
 });
 
-const produtoController = require('../controllers/produtos-controller');
+const controller = require('../controllers/pedidos-controller');
 
-router.get('/', produtoController.getProduto);
-router.get('/:id_produto', produtoController.getByIDProduto);
-router.post('/',login.obrigatorio,upload.single('imagem_produto'),produtoController.postProduto);
-router.patch('/',login.obrigatorio, produtoController.patchProduto);
-router.delete('/',login.obrigatorio, produtoController.deleteProduto);
+router.get('/', controller.get);
+router.get('/:id_', controller.getByID);
+router.post('/',login.obrigatorio,upload.single('imagem_'),controller.insert);
+router.patch('/',login.obrigatorio, controller.update);
+router.delete('/',login.obrigatorio, controller.delete);
 
 module.exports = router;
