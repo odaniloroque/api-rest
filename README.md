@@ -1,6 +1,6 @@
 # API Exemplo ( NODEJS +  Express )
 
-Pacotes utilizados no projeto 
+Pacotes utilizados no projeto /n
 npm init
 npm install express
 npm --save-dev install morgan
